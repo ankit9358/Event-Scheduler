@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <h3>Enter title</h3>
+        <input type="text" name="title" value="{{user.title}}">
+        <br>
+        <h3>Enter date</h3>
+        <input type="date" id="birthday" name="date" value='{{user.date|date:"Y-m-d" }}'>
+        <br>
+        <h3>Enter event</h3>
+        <textarea type="text" name="event">{{user.event}}</textarea>
+        <br>
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Welcome {{user.firstname}} {{user.lastname}}</h1>
+    <a href='{% url "logout" %}'>logout</a>
+    <div>
+        <ul id="navigation">
+        {% for item in items %}
+            <li><a href="/event/details/{{ item.slug }}"><h3>{{ item.title }}</h3></a></li>
+            <ul>
+                <a href="/event/edit/{{ item.slug }}">edit</a>&nbsp;
+                <a href="/event/delete/{{ item.slug }}">delete</a>
+
+            </ul>
+
+        {% endfor %}
+        </ul>
+    </div>
+    <div>
+        <br>
+        <hr>
+        <a href='{% url "create" %}'><h4>Create Event</h4></a>
+    </div>
+</body>
+</html>
